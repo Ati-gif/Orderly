@@ -1,14 +1,22 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import { Header, Container } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
+import {Card, Image} from 'react-bootstrap'
+import orderlyImg from '../images/Orderly.jpg'
 
 export default () => {
   const { name} = useContext(AuthContext);
   return (
     <Container>
-      <Header as="h1" textAlign="center">
-        Welcome {name}
-      </Header>
+        <Card>
+        <Image src={orderlyImg} fluid />
+    <Card.Body>
+      <Card.Text>
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </Card.Text>
+    </Card.Body>
+  </Card>
     </Container>
   );
 };
