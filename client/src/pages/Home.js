@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Container } from "semantic-ui-react";
 import {Card, Image} from 'react-bootstrap'
-import orderlyImg from '../images/Orderly.jpg'
+import orderlyImg from '../images/Orderly.png'
 
 export default () => {
   const { name} = useContext(AuthContext);
