@@ -7,8 +7,6 @@ import Register from "./pages/Register";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 
-
-import Rooms from "./pages/Rooms";
 function App() {
   return (
     <>
@@ -17,7 +15,6 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Products} />
         <Route exact path="/categories" component={Categories} />
-        <Route exact path="/rooms" component={Rooms} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/about" component={About} />
