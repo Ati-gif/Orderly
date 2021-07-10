@@ -28,9 +28,6 @@ const NavBar = () => {
           <Col>
             <Nav.Link href="/login">Login</Nav.Link>
           </Col>
-          <Col>
-            <Nav.Link href="/products">products</Nav.Link>
-          </Col>
         </>
       );
     }
@@ -45,6 +42,8 @@ const NavBar = () => {
             <Nav>
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/categories">Category</Nav.Link>
+              <Nav.Link href="/products">Products</Nav.Link>
             </Nav>
           </Row>
           <Row>

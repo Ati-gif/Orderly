@@ -1,11 +1,13 @@
 import { Switch, Route } from "react-router-dom";
 import Navbar from './components/NavBar';
 import About from "./pages/About";
-import Categories from "./pages/Categories";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Products from "./pages/Products";
 import Register from "./pages/Register";
+import Products from "./pages/Products";
+import Categories from "./pages/Categories";
+
+
 import Rooms from "./pages/Rooms";
 function App() {
   return (
