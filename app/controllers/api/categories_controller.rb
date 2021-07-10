@@ -1,19 +1,20 @@
 class Api::CategoriesController < ApplicationController
+  before_action :set_room
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    render json: Category.all
+      render json: @room.categories
   end
 
   def show
-    render json: @category
+    category = @room.category.find(params[:id])
+    render json: category
   end
 
   def create
-    @category = @category.new(category_params)
-
+    @category = @room.categories.new(category_params)
     if @category.save
-      render json: [@category]
+      render json: [@room, @category]
     else
       render :new
     end
@@ -21,7 +22,7 @@ class Api::CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      render json: [@category]
+      render json: [@room, @category]
     else
       render :edit
     end
@@ -29,13 +30,21 @@ class Api::CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    render json: category_path(@category)
+    render json: room_categories_path(@room)
   end
 
   private
 
-  def set_category
-    @category = Category.find(params[:id])
-  end
+    def set_room
+      @room = Room.find(params[:room_id])
+    end
 
+    def set_category
+      @category = Category.find(params[:id])
+    end
+    
+    def category_params
+      params.require(:category).permit(:name,  :category_img,)
+    end
+end
 end

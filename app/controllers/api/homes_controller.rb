@@ -1,5 +1,5 @@
 class Api::HomesController < ApplicationController
-  before_action :home, only: [:show, :edit, :update, :destroy]
+  before_action :home, only: [:update, :show]
 
   def index
     render json: Home.all
@@ -17,18 +17,13 @@ class Api::HomesController < ApplicationController
     end
   end
 
-  def destroy
-    @home.destroy
-    render json: home_path(@home)
-  end
-
   private
 
   def home
     @home = Home.find(params[:id])
   end
 
-  def home_params
+  def homee_params
     params.require(:home).permit(
       :main_title, 
       :home_img, 
@@ -36,6 +31,5 @@ class Api::HomesController < ApplicationController
     )
   end
 end
-
 
 

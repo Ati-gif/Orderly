@@ -3,20 +3,21 @@ import { AuthContext } from "../providers/AuthProvider";
 import { Container } from "semantic-ui-react";
 import {Card, Image} from 'react-bootstrap'
 import orderlyImg from '../images/Orderly.png'
-
+import PrintThisComponent from '../pages/Print';
 export default () => {
   const { name} = useContext(AuthContext);
   return (
-    <Container>
-        <Card>
-        <Image src={orderlyImg} fluid />
-    <Card.Body>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </Card.Text>
-    </Card.Body>
-  </Card>
-    </Container>
+    
+    <div>
+    <Card className="text-center"style={{display: 'flex'}}>
+<Card.Body>
+<Image src={orderlyImg} fluid />
+</Card.Body>
+</Card>
+<PrintThisComponent />
+</div>
+    
+
+    
   );
 };
