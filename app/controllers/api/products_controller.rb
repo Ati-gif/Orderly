@@ -33,8 +33,11 @@ class Api::ProductsController < ApplicationController
     render json: category_products_path(@category)
   end
 
-
   private
+    def set_room
+      @room = Room.find(params[:id])
+    end
+
     def set_category
       @category = Category.find(params[:category_id])
     end
@@ -44,7 +47,6 @@ class Api::ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :image, :price, :shopping_list)
+      params.require(:product).permit(:name, :id, :description, :image, :price, :shopping_list)
     end
   end
-end
