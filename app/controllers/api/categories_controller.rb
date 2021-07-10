@@ -35,6 +35,7 @@ class Api::CategoriesController < ApplicationController
 
   private
 
+<<<<<<< HEAD
     def set_room
       @room = Room.find(params[:room_id])
     end
@@ -47,4 +48,9 @@ class Api::CategoriesController < ApplicationController
       params.require(:category).permit(:name,  :category_img,)
     end
 end
+=======
+  def set_category
+    @category = Category.find(params[:id])
+  end
+>>>>>>> f55adeee042098d1017bbc9c9fc0abd9d806159b
 end

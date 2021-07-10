@@ -18,8 +18,11 @@ ActiveRecord::Schema.define(version: 2021_07_09_221303) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "category_img"
+    t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_categories_on_room_id"
+
   end
 
   create_table "homes", force: :cascade do |t|
@@ -72,6 +75,5 @@ ActiveRecord::Schema.define(version: 2021_07_09_221303) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
-
   add_foreign_key "products", "categories"
 end

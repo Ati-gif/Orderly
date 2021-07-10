@@ -2,10 +2,6 @@
 
 one:
   name: MyString
-  category_img: MyString
-  room: one
 
 two:
   name: MyString
-  category_img: MyString
-  room: two
