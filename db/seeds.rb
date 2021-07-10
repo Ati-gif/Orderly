@@ -30,3 +30,4 @@ random_boolean = [true, false]
   puts "seeded #{Room.all.size} Rooms"
   puts "seeded #{Category.all.size} Categories"
   puts "seeded #{Product.all.size} Products"
+
