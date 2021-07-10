@@ -28,6 +28,9 @@ const NavBar = () => {
           <Col>
             <Nav.Link href="/login">Login</Nav.Link>
           </Col>
+          <Col>
+            <Nav.Link href="/products">products</Nav.Link>
+          </Col>
         </>
       );
     }
