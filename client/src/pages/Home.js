@@ -34,10 +34,10 @@ export default () => {
   return (
     <div>
     <Card className="text-center"style={{display: 'flex'}}>
-    <Card.Body>
-    <Image src={orderlyImg} fluid />
-    {renderRooms()}
-    </Card.Body>
+      <Card.Body>
+        <Image src={orderlyImg} fluid />
+        {renderRooms()}
+      </Card.Body>
     </Card>
     <PrintThisComponent />
     </div>
