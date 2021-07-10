@@ -17,7 +17,5 @@ export default () => {
 <PrintThisComponent />
 </div>
     
-
-    
   );
 };
