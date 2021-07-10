@@ -21,7 +21,7 @@ const Rooms = () => {
 }
 
 return(
-  <div></div>
+  <div>ROOOOOMS</div>
   )
 }
 export default Rooms

@@ -21,7 +21,7 @@ const Categories = () => {
 }
 
 return(
-  <div></div>
+  <div>CAAAATS</div>
   )
 }
 export default Categories

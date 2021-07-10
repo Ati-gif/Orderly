@@ -20,7 +20,7 @@ const Products = () => {
 }}
 
 return(
-  <div></div>
+  <div>products</div>
   )
 }
 export default Products
