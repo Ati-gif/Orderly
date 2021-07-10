@@ -1,56 +1,49 @@
 class Api::CategoriesController < ApplicationController
-  before_action :set_room
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
-
-  def index
-      render json: @room.categories
-  end
-
-  def show
-    category = @room.category.find(params[:id])
-    render json: category
-  end
-
-  def create
-    @category = @room.categories.new(category_params)
-    if @category.save
-      render json: [@room, @category]
-    else
-      render :new
+    before_action :set_room
+    before_action :set_category, only: [:show, :edit, :update, :destroy]
+  
+    def index
+        render json: @room.categories
     end
-  end
-
-  def update
-    if @category.update(category_params)
-      render json: [@room, @category]
-    else
-      render :edit
+  
+    def show
+      category = Category.find(params[:id])
+      render json: category
     end
-  end
-
-  def destroy
-    @category.destroy
-    render json: room_categories_path(@room)
-  end
-
-  private
-
-<<<<<<< HEAD
-    def set_room
-      @room = Room.find(params[:room_id])
+  
+    def create
+      @category = Category.new(category_params)
+  
+      if @category.save
+        render json: [@room, @category]
+      else
+        render :new
+      end
     end
-
-    def set_category
-      @category = Category.find(params[:id])
+  
+    def update
+      if @category.update(category_params)
+        render json: [@room, @category]
+      else
+        render :edit
+      end
     end
-    
-    def category_params
-      params.require(:category).permit(:name,  :category_img,)
+  
+    def destroy
+      @category.destroy
+      render json: room_categories_path(@room)
     end
-end
-=======
-  def set_category
-    @category = Category.find(params[:id])
-  end
->>>>>>> f55adeee042098d1017bbc9c9fc0abd9d806159b
-end
+  
+    private
+      def set_room
+        @room = Room.find(params[:id])
+      end
+  
+      def set_category
+        @category = Product.find(params[:id])
+      end
+  
+      def category_params
+        params.require(:category).permit(:name)
+      end
+    end
