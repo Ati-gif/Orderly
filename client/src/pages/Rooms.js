@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Card, Carousel, Image } from 'react-bootstrap'
-import Footer from '../components/Footer'
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([])
