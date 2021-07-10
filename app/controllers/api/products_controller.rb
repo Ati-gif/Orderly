@@ -21,7 +21,6 @@ class Api::ProductsController < ApplicationController
       render :new
     end
   end
-
   def update
     if @product.update(product_params)
       render json: [@category, @product]
@@ -29,7 +28,6 @@ class Api::ProductsController < ApplicationController
       render :edit
     end
   end
-
   def destroy
     @product.destroy
     render json: category_products_path(@category)
