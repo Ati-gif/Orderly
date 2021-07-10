@@ -25,7 +25,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'rack-cors'
 
 group :development, :test do
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'faker'
 gem "better_errors"
 gem "binding_of_caller"
 gem 'pry-rails'
